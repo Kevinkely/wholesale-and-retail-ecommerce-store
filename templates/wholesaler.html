@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <div class="view overlay">
+            {% comment %} <img src="/media/" class="card-img-top" {% endcomment %}
+            <img src="{{ wholesaler.image.url }}" class="card-img-top">
+            <a href="{{ wholesaler.get_absolute_url }}">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+
+            <div class="mb-3">
+              <a href="">
+                <span class="badge purple mr-1">{{ object.get_category_display }}</span>
+              </a>
+            </div>
+             <h4>Minimum of 5 pieces should be ordered for wholesale products</h4>
+            <p class="lead">
+              {% if object.discount_price %}
+              <span class="mr-1">
+                <del>KSH{{ object.price }}</del>
+              </span>
+              <span>KSH{{ object.discount_price }}</span>
+              {% else %}
+              <span>KSH{{ object.price }}</span>
+              {% endif %}
+            </p>
+
+            <p class="lead font-weight-bold">Description</p>
+
+            <p>{{ object.description }}</p>
+            <p>{{ object.crown }}</p>
+
+            <div class="form-group">
+              <label for="color" class="control-label col-md-2 text-left">
+                  Size </label>
+                  <div class="col-md-4">
+                   <select name="size" class="form-control input-sm">
+                      <option value=small>sm</option>
+                      <option value="medium">m</option>
+                      <option value="large">l</option>
+                      <option value="extra-large">xl</option>
+                      <option value="extra-extra-large">xxl</option>
+                   </select>
+                  </div>
+            </div>
+
+            {% comment %} <form class="d-flex justify-content-left">
+              <!-- Default input -->
+              <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+              <button class="btn btn-primary btn-md my-0 p" type="submit">
+                Add wholesaler to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+            </form> {% endcomment %}
+            <a href="{{ object.get_add_wholesaler_to_cart_url }}" class="btn btn-primary btn-md my-0 p">
+              Add to cart
+              <i class="fas fa-shopping-cart ml-1"></i>
+            </a>
+            <a href="{{ object.get_remove_wholesaler_from_cart_url }}" class="btn btn-danger btn-md my-0 p">
+              Remove from cart
+            </a>
+
+          </div>
+          <!--Content-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <hr>
+
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 text-center">
+
+          <h4 class="my-4 h4">Additional information</h4>
+
+          <p> More photos of the product</p>
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4">
+
+          <div class="view overlay">
+            {% comment %} <img src="/media/" class="card-img-top" {% endcomment %}
+            <img src="{{ wholesaler.image_1.url }}" class="card-img-top">
+            <a href="{{ wholesaler.get_absolute_url }}">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+          <div class="view overlay">
+            {% comment %} <img src="/media/" class="card-img-top" {% endcomment %}
+            <img src="{{ wholesaler.image_2.url }}" class="card-img-top">
+            <a href="{{ wholesaler.get_absolute_url }}">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+          <div class="view overlay">
+            {% comment %} <img src="/media/" class="card-img-top" {% endcomment %}
+            <img src="{{ wholesaler.image_3.url }}" class="card-img-top">
+            <a href="{{ wholesaler.get_absolute_url }}">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+    </div>
+  </main>
+
+{% endblock content %}
