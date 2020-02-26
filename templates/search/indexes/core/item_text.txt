@@ -1,3 +1,0 @@
-{{ object.title }}
-{{ object.get_absolute_url }}
-{{ object.body }}
