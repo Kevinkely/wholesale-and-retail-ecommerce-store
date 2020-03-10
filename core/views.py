@@ -618,11 +618,11 @@ class RequestRefundView(View):
 class WholesalerListView(ListView):
     model = Wholesaler
     paginate_by = 10
-    template_name = "wholesalers.html"
+    template_name = "wholesalers/wholesalers.html"
 
 class WholesalerDetailView(DetailView):
         model = Wholesaler
-        template_name = "wholesaler.html"
+        template_name = "wholesalers/wholesaler.html"
 
 
 class PaymentViewC(View):
